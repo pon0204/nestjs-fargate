@@ -14,7 +14,10 @@
 - [ ] dockerFile作成 
   - [ ] docker-composeでpostgressとnestjs設定
   - [ ] env.ファイル等
+- [ ] ユーザーCRUD機能作成
 - [ ]  awsでnest.jsをfargateにデプロイ
+    - [ ]  デプロイ環境設定
+      - [ ]  nginxやDBのmigration
     - [ ] ECRにpush
     - [ ]  VPCなども設定
     - [ ]  RDS
