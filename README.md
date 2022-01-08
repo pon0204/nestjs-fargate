@@ -11,7 +11,9 @@
 ## TODO
 
 - [ ]  githubに、nestjs-deployリポジトリとReadMeつくる
-- [ ] dockerFile作成
+- [ ] dockerFile作成 
+  - [ ] docker-composeでpostgressとnestjs設定
+  - [ ] env.ファイル等
 - [ ]  awsでnest.jsをfargateにデプロイ
     - [ ] ECRにpush
     - [ ]  VPCなども設定
@@ -19,6 +21,7 @@
     - [ ]  Route
     - [ ] パラメータストアなど
 - [ ]  github actionsで自動デプロイ
+- [ ]  redis設定
 - [ ]  quequeとcronをEC2で動かす
 - [ ] reactフォルダ作成して、amplifyでデプロイ
 - [ ] api通信出来るとこまで
