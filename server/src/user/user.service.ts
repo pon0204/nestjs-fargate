@@ -13,4 +13,12 @@ export class UserService {
   async findAll(): Promise<User[]> {
     return await this.userRepository.find();
   }
+
+  async createUser(dto: any) {
+    const user = new User();
+    user.firstName = dto.firstName;
+    user.lastName = dto.lastName;
+    user.isActive = dto.isActive;
+    return await this.userRepository.save(user);
+  }
 }
