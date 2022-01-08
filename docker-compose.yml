@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:12
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    networks:
+      - nestjs
+    volumes:
+      - postgres-data:/var/lib/postgresql/data:cached
+    restart: always
+
+  server:
+    build:
+      context: ./server
+    command: bash -c "npm run start:dev"
+    volumes:
+      - ./server:/server:cached
+    ports:
+      - 3000:3000
+    networks:
+      - nestjs
+    depends_on:
+      - postgres
+    restart: always
+
+networks:
+  nestjs:
+    name: nestjs
+volumes:
+  postgres-data:
