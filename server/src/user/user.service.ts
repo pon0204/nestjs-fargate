@@ -28,6 +28,10 @@ export class UserService {
       isActive,
     });
   }
+
+  async deleteUser(id: string) {
+    await this.userRepository.delete(id);
+  }
 }
 
 // async createUser(dto: CreateUserDto) {
