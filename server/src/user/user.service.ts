@@ -30,7 +30,7 @@ export class UserService {
   }
 
   async deleteUser(id: string) {
-    await this.userRepository.delete(id);
+    await this.userRepository.softDelete(id);
   }
 }
 
@@ -40,4 +40,8 @@ export class UserService {
 // user.lastName = dto.lastName;
 // user.isActive = dto.isActive;
 // return await this.userRepository.save(user);
+// }
+
+// async deleteUser(id: string) {
+//   await this.userRepository.delete(id);
 // }
