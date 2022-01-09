@@ -16,10 +16,14 @@ export class UserService {
   }
 
   async createUser(dto: CreateUserDto) {
-    const user = new User();
-    user.firstName = dto.firstName;
-    user.lastName = dto.lastName;
-    user.isActive = dto.isActive;
-    return await this.userRepository.save(user);
+    return await this.userRepository.save({ ...dto });
   }
 }
+
+// async createUser(dto: CreateUserDto) {
+// const user = new User();
+// user.firstName = dto.firstName;
+// user.lastName = dto.lastName;
+// user.isActive = dto.isActive;
+// return await this.userRepository.save(user);
+// }
